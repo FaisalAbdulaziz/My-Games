@@ -1,6 +1,6 @@
 //import React from 'react';
 import React, { Component } from 'react';
-//import { Container, Card, Button } from 'react-bootstrap'
+import { Container,Row,Col, Card, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import Cards from './Cards'
 
@@ -10,7 +10,7 @@ class CardList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            allCards: []
+            allCards: [],
         };
         console.log('77777')
     }
@@ -38,11 +38,15 @@ class CardList extends Component {
                     key={game.id}
                 ></Cards>)
         })
-        { console.log('555', this.props.games) }
-        { console.log('6666', allCards) }
+        
+        // { console.log('555', this.props.games) }
+        // { console.log('6666', allCards) }
         return (
             <div>
+                <Row>
                     {allCards}
+                </Row>
+                
             </div>
 
 
