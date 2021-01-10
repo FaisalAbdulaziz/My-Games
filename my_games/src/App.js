@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Container, Col, Row, Button } from 'react-bootstrap'
+import { Container,Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import CardList from './component/CardList';
-import axios from 'axios';
 
 
 
@@ -19225,8 +19224,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Container>
-          {console.log('kkkkkkkkkkkkkkk',this.state.gameData.results[0])}
-            <CardList games={this.state.gameData.results[0]}></CardList>
+          {console.log('kkkkkkkkkkkkkkk',this.state.gameData.results)}
+            <CardList games={this.state.gameData.results}></CardList>
             {/* <Row>
               <Col><CardList handleCards={this.handleCards} games={this.state.gameData}></CardList></Col>
             </Row>

@@ -10,7 +10,7 @@ class CardList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            allCards:[]
+            allCards: []
         };
         console.log('77777')
     }
@@ -30,15 +30,21 @@ class CardList extends Component {
     // }
 
     render() {
-        
-        {console.log('555',this.props.games)}
+        const allCards = this.props.games.map((game) => {
+            { console.log('555', game) }
+            return (
+                <Cards
+                    game={game}
+                    key={game.id}
+                ></Cards>)
+        })
+        { console.log('555', this.props.games) }
+        { console.log('6666', allCards) }
         return (
             <div>
-                
-                <Cards game={this.props.games}></Cards>
-                {console.log('111222',this.state.allCards)}
+                    {allCards}
             </div>
-            
+
 
 
 
