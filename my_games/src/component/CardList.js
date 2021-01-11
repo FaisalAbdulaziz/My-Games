@@ -59,9 +59,10 @@ class CardList extends Component {
             <div>
                 
                 <Row>
-                    {this.props.filter === 'all' ? allCards : fav}
+                    {this.props.filter === 'all' ? allCards : fav }
                     {/* {allCards} */}
                 </Row>
+                {this.props.filter === 'fav' && this.props.faves.length > 0 ? <Button onClick={this.props.setFave()} variant="outline-danger">Remove all</Button> :"" }
                 
             </div>
 

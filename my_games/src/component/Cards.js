@@ -39,7 +39,7 @@ class Cards extends Component {
                             <Card.Img className='imgCard' variant="top" src={this.props.game.background_image} />
                             {/* <button className='btnCard'><MdFavorite color='white'/></button> */}
                             {/* <div><MdFavorite color='white'/></div> */}
-                            <div onClick={this.handleClick}>{(this.state.isFave) ? <MdFavorite color='red' /> : <MdFavorite />}</div>
+                            <div className='pointer' onClick={this.handleClick}>{(this.state.isFave) ? <MdFavorite color='red' /> : <MdFavorite />}</div>
                             {/* <Button className='btnCard' variant="primary">Go somewhere</Button> */}
                         </Card.Body>
                     </Card>

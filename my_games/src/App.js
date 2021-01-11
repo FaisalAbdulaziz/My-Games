@@ -45,6 +45,10 @@ class App extends Component {
         this.setState({ faves })
     }
 
+    setFave = () => {
+        this.setState({ faves: [] })
+    }
+
     componentDidMount() {
         this.call()
     }
@@ -54,7 +58,7 @@ class App extends Component {
     render() {
         console.log('hhhhh', this.state.gameData)
         const cardlist = (this.state.gameData ? <div>
-            <CardList className='card-container' filter={this.state.filter} games={this.state.gameData} faves={this.state.faves} onFaveToggle={this.handleFaveToggle}></CardList>
+            <CardList className='card-container' setFave={()=>this.setFave} filter={this.state.filter} games={this.state.gameData} faves={this.state.faves} onFaveToggle={this.handleFaveToggle}></CardList>
         </div> : null)
 
         return (

@@ -9,7 +9,7 @@ class Navbar extends Component {
     }
     render() {
         return (
-            <Nav fill variant="tabs" /*defaultActiveKey="/home"*/>
+            <Nav className='fixed-top' fill variant="tabs" /*defaultActiveKey="/home"*/>
                 <Nav.Item>
                     {/* <Nav.Link href="/home">All games</Nav.Link> */}
                     <Nav.Link  onClick={() => this.props.handleFilterClick('all')} >All games</Nav.Link>
