@@ -33,13 +33,13 @@ class Cards extends Component {
         // { console.log('141414414141', this.props.game) }
         return (
             <Col lg={3}>
-                <Card onClick={this.handleClick} className='card' style={{ width: '18rem' }}>
+                <Card className='card' style={{ width: '18rem' }}>
                         <Card.Body>
                             <Card.Title>{this.props.game.name}</Card.Title>
                             <Card.Img className='imgCard' variant="top" src={this.props.game.background_image} />
                             {/* <button className='btnCard'><MdFavorite color='white'/></button> */}
                             {/* <div><MdFavorite color='white'/></div> */}
-                            <div>{(this.state.isFave) ? <MdFavorite color='red' /> : <MdFavorite />}</div>
+                            <div onClick={this.handleClick}>{(this.state.isFave) ? <MdFavorite color='red' /> : <MdFavorite />}</div>
                             {/* <Button className='btnCard' variant="primary">Go somewhere</Button> */}
                         </Card.Body>
                     </Card>

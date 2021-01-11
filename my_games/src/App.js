@@ -4,7 +4,7 @@ import { Container, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import CardList from './component/CardList';
 import axios from "axios"
-import Nav from "./component/Nav.js"
+import Navbar from "./component/Navbar.js"
 
 
 class App extends Component {
@@ -15,9 +15,14 @@ class App extends Component {
         this.state = {
             gameData: null,
             faves: [],
+            filter: 'all',
         };
 
         //this.handleCards=this.handleCards.bind(this)
+    }
+
+    handleFilterClick = (filter) => {
+        this.setState({ filter })
     }
 
     call = () => {
@@ -49,25 +54,16 @@ class App extends Component {
     render() {
         console.log('hhhhh', this.state.gameData)
         const cardlist = (this.state.gameData ? <div>
-            <CardList className='card-container' games={this.state.gameData} onFaveToggle={this.handleFaveToggle}></CardList>
+            <CardList className='card-container' filter={this.state.filter} games={this.state.gameData} faves={this.state.faves} onFaveToggle={this.handleFaveToggle}></CardList>
         </div> : null)
 
         return (
             <div className="App">
+                <Navbar handleFilterClick={this.handleFilterClick}></Navbar>
                 <header className="App-header">
                     <Container>
                         {cardlist}
                     </Container>
-
-                    <Button className='btn btn-danger'>bbb</Button>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-        </a>
                 </header>
             </div>
         );

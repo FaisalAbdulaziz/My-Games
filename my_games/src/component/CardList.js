@@ -11,6 +11,7 @@ class CardList extends Component {
         super(props);
         this.state = {
             allCards: [],
+            filter: 'all',
         };
         console.log('77777')
     }
@@ -40,6 +41,17 @@ class CardList extends Component {
                     isFave={this.props.games.includes(game)}
                 ></Cards>)
         })
+
+        const fav = this.props.faves.map((game) => {
+            return (
+                <Cards
+                    game={game}
+                    key={game.id}
+                    onFaveToggle={() => this.props.onFaveToggle(game)}
+                    isFave={this.props.games.includes(game)}
+                ></Cards>
+            )
+        })
         
         // { console.log('555', this.props.games) }
         // { console.log('6666', allCards) }
@@ -47,7 +59,8 @@ class CardList extends Component {
             <div>
                 
                 <Row>
-                    {allCards}
+                    {this.props.filter === 'all' ? allCards : fav}
+                    {/* {allCards} */}
                 </Row>
                 
             </div>
