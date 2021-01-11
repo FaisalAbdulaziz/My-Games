@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import CardList from './component/CardList';
 import axios from "axios"
 import Navbar from "./component/Navbar.js"
+import GameDetails from './component/GameDetails';
+import Demo from './component/Demo.js';
 
 
 class App extends Component {
@@ -66,6 +68,7 @@ class App extends Component {
                 <Navbar handleFilterClick={this.handleFilterClick}></Navbar>
                 <header className="App-header">
                     <Container>
+                    
                         {cardlist}
                     </Container>
                 </header>
