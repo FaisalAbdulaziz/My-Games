@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Container,Row,CardGroup,Col, Card, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
-import Cards from './Cards'
+import GameDetails from './GameDetails'
 
 
 
@@ -33,23 +33,23 @@ class CardList extends Component {
     render() {
         { console.log('555', this.props.games) }
         const allCards = this.props.games.map((game) => {
-            return (
-                <Cards
+            return ( 
+                <GameDetails
                     game={game}
                     key={game.id}
                     onFaveToggle={() => this.props.onFaveToggle(game)}
                     isFave={this.props.games.includes(game)}
-                ></Cards>)
+                ></GameDetails>)
         })
 
         const fav = this.props.faves.map((game) => {
             return (
-                <Cards
+                <GameDetails
                     game={game}
                     key={game.id}
                     onFaveToggle={() => this.props.onFaveToggle(game)}
                     isFave={this.props.games.includes(game)}
-                ></Cards>
+                ></GameDetails>
             )
         })
         

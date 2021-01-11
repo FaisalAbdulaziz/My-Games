@@ -56,6 +56,7 @@
 
 .pointer {
   cursor: pointer;
+  margin-top: 10px
 }
 
 .fixed-top{
@@ -71,6 +72,19 @@
 .RatingPer{
   font-size: 80px;
   margin-top: 20px;
+}
+.detailsbtn{
+  margin-top: 10px;
+}
+.ratings_count{
+  margin-left: 4px;
+}
+
+.cardBody{
+  height: 300px;
+  margin: -17px;
+  margin-top: 5px;
+  padding-bottom: 0px
 }
 
 

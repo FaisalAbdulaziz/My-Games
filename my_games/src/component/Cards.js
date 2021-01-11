@@ -41,7 +41,7 @@ class Cards extends Component {
         return (
             <Col lg={3}>
                 <Card className='card' style={{ width: '18rem' }}>
-                        <Card.Body onClick={this.handleActiveClick}>
+                        <Card.Body className='cardBody' onClick={this.handleActiveClick}>
                             <Card.Title>{this.props.game.name}</Card.Title>
                             <Card.Img className='imgCard' variant="top" src={this.props.game.background_image} />
                             
@@ -50,7 +50,7 @@ class Cards extends Component {
                             <div className='pointer' onClick={this.handleClick}>{(this.state.isFave) ? <MdFavorite color='red' /> : <MdFavorite />}</div>
                             {/* <Button className='btnCard' variant="primary">Go somewhere</Button> */}
                         </Card.Body>
-                        <GameDetails active={this.state.active} game={this.props.game} ></GameDetails>
+                        {/* <GameDetails active={this.state.active} game={this.props.game} ></GameDetails> */}
                     </Card>
                     </Col>
         );
