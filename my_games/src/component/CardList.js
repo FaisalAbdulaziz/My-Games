@@ -1,6 +1,6 @@
 //import React from 'react';
 import React, { Component } from 'react';
-import { Container,Row,Col, Card, Button } from 'react-bootstrap'
+import { Container,Row,CardGroup,Col, Card, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import Cards from './Cards'
 
@@ -30,12 +30,14 @@ class CardList extends Component {
     // }
 
     render() {
+        { console.log('555', this.props.games) }
         const allCards = this.props.games.map((game) => {
-            { console.log('555', game) }
             return (
                 <Cards
                     game={game}
                     key={game.id}
+                    onFaveToggle={() => this.props.onFaveToggle(game)}
+                    isFave={this.props.games.includes(game)}
                 ></Cards>)
         })
         
@@ -43,6 +45,7 @@ class CardList extends Component {
         // { console.log('6666', allCards) }
         return (
             <div>
+                
                 <Row>
                     {allCards}
                 </Row>

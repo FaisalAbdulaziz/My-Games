@@ -47,5 +47,18 @@
 .card{
     float: left;
     padding:0px;
-    margin:10px;
+    margin:0px;
+    height: 100%;
+    width:100%;
+}
+.card-body{
+  position: relative;
+}
+.imgCard{
+  height: 66%;
+}
+
+.btnCard{
+  background-color:black;
+  color: darkblue;
 }
