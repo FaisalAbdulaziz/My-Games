@@ -39,14 +39,24 @@
     float: left;
     padding:0px;
     margin:0px;
+    margin-right:-33px;
+    margin-top: 5px;
     height: 100%;
     width:100%;
 }
+
 .card-body{
   position: relative;
 }
 .imgCard{
   height: 66%;
+}
+.imgCardTop{
+  float: left;
+  border-radius: 20%;
+  height: 100px;
+  width: 150px;
+  margin-right: 20px;
 }
 
 .btnCard{
@@ -63,6 +73,23 @@
   background-color:rgb(32, 35, 42);
 }
 
+.imgAndName{
+  float: left;
+  padding: -1000px
+}
+.detailsbtn p{
+    color: rgb(177, 170, 160);
+    font-size: 16px;
+    line-height: 1.25;
+    display: block;
+    color: #575757;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0px
+}
+
 .Rating{
   float: left;
   font-size: 70px;
@@ -75,17 +102,23 @@
 }
 .detailsbtn{
   margin-top: 10px;
+  margin-left: 100px;
 }
 .ratings_count{
   margin-left: 4px;
 }
 
 .cardBody{
-  height: 300px;
+  height: 400px;
   margin: -17px;
   margin-top: 5px;
   padding-bottom: 0px
 }
+
+/* .drawer{
+  margin: 0px;
+  width: -100px;
+} */
 
 
 /* .sidenav {

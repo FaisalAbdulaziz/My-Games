@@ -39,7 +39,7 @@ class Cards extends Component {
         
         // { console.log('141414414141', this.props.game) }
         return (
-            <Col lg={3}>
+            <Col onClick={this.props.toggleDrawer()} lg={3}>
                 <Card className='card' style={{ width: '18rem' }}>
                         <Card.Body className='cardBody' onClick={this.handleActiveClick}>
                             <Card.Title>{this.props.game.name}</Card.Title>

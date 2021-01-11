@@ -38,6 +38,7 @@ class CardList extends Component {
                     game={game}
                     key={game.id}
                     onFaveToggle={() => this.props.onFaveToggle(game)}
+                    games={this.props.games}
                     isFave={this.props.games.includes(game)}
                 ></GameDetails>)
         })
@@ -48,6 +49,7 @@ class CardList extends Component {
                     game={game}
                     key={game.id}
                     onFaveToggle={() => this.props.onFaveToggle(game)}
+                    games={this.props.games}
                     isFave={this.props.games.includes(game)}
                 ></GameDetails>
             )
