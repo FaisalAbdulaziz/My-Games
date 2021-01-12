@@ -50,6 +50,7 @@ function GameDetails(props) {
                     </div>
                 </Drawer.Header>
                 <Drawer.Body>
+                    {/* {1 === undefined?console.log('undefined'):console.log(props.game.short_screenshots[0].image)} */}
                     <Carousel autoplay className="custom-slider">
                         <img
                             src={props.game.short_screenshots[0].image}

@@ -19,7 +19,7 @@ function App() {
     }
 
     function call() {
-        const url = `https://api.rawg.io/api/games`
+        const url = `https://api.rawg.io/api/games?page=1`
 
         axios({
             method: 'GET',
