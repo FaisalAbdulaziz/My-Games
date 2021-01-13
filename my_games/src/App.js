@@ -29,8 +29,6 @@ const App = () => {
         }).then(response => {
             setGameData(prevGameData => prevGameData = response.data.results)
         })
-
-
     }
 
     const call2 = (num) => {
