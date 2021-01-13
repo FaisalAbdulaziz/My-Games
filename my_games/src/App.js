@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Container,Button } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import CardList from './component/CardList';
 import axios from "axios"
@@ -8,18 +8,19 @@ import Navbar from "./component/Navbar.js"
 
 
 
-function App() {
+const App = () => {
 
     const [gameData, setGameData] = useState(() => null)
     const [faves, setFaves] = useState(() => [])
     const [filter, setFilter] = useState(() => 'all')
     const [page, setPage] = useState(() => 1)
+    const [load, setLoad] = useState(() => 'More Games')
 
-    function handleFilterClick(filter) {
+    const handleFilterClick = (filter) => {
         setFilter(prevFilter => prevFilter = filter)
     }
 
-    function call() {
+    const call = () => {
         const url = `https://api.rawg.io/api/games?page=1`
 
         axios({
@@ -29,10 +30,10 @@ function App() {
             setGameData(prevGameData => prevGameData = response.data.results)
         })
 
-        
+
     }
 
-    function call2(num) {
+    const call2 = (num) => {
         const url = `https://api.rawg.io/api/games?page=${num}`
 
         axios({
@@ -40,19 +41,20 @@ function App() {
             url: url
         }).then(response => {
             setGameData(prevGameData => prevGameData.concat(response.data.results))
+            setLoad(prevLoad => prevLoad = 'More Games')
         })
 
-        
+
     }
 
-    function handleFaveToggle(film) {
+    const handleFaveToggle = (film) => {
         const fave = faves.slice(0)
         const filmIndex = fave.indexOf(film)
         filmIndex === -1 ? fave.push(film) : fave.splice(filmIndex, 1)
         setFaves(prevFave => prevFave = fave)
     }
 
-    function setFave() {
+    const setFave = () => {
         setFaves(prevFave => prevFave = [])
     }
 
@@ -60,12 +62,14 @@ function App() {
         call()
     }, [])
     useEffect(() => {
-        page===1?console.log(''):
-        call2(page)
+        page === 1 ? console.log('') :
+            call2(page)
     }, [page])
 
-    const test=()=>{
-        setPage(prevPage => prevPage+1)
+    const test = (e) => {
+        e.preventDefault();
+        setLoad(prevLoad => prevLoad = 'Loading...')
+        setPage(prevPage => prevPage + 1)
     }
     const cardlist = (gameData ? <div>
         <CardList className='card-container' setFave={() => setFave} filter={filter} games={gameData} faves={faves} onFaveToggle={handleFaveToggle}></CardList>
@@ -78,11 +82,11 @@ function App() {
                 <Container>
 
                     {cardlist}
-                    
+
                 </Container>
                 {/* <button  onClick={test}>More Games</button> */}
-                {filter==='all'?<Button className='moreBtn' variant="light" onClick={test}>More Games</Button>:null}
-                
+                {filter === 'all' ? <Button className='moreBtn' variant="light" onClick={test}>{load}</Button> : null}
+
             </header>
         </div>
     );

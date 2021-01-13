@@ -5,7 +5,7 @@ import GameDetails from './GameDetails'
 
 
 
-function CardList(props) {
+const CardList = (props) => {
 
     const allCards = props.games.map((game) => {
         return (

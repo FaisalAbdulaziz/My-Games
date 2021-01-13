@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 
-function Navbar(props) {
+const Navbar = (props) => {
     return (
         <Nav className='fixed-top' fill variant="tabs" /*defaultActiveKey="/home"*/>
             <Nav.Item>

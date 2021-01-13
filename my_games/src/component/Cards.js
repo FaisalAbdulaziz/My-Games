@@ -3,18 +3,18 @@ import { Card, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import { MdFavorite } from "react-icons/md";
 
-function Cards(props) {
+const Cards = (props) => {
 
     const [isFave, setIsFave] = useState(() => false)
     const [active, setActive] = useState(() => false)
 
-    function handleClick(e) {
+    const handleClick = (e) => {
         e.stopPropagation()
         setIsFave((prevIsFave) => prevIsFave = !isFave)
         props.onFaveToggle()
     }
 
-    function handleActiveClick() {
+    const handleActiveClick = () => {
         setActive((prevActive) => prevActive = active)
     }
     return (
