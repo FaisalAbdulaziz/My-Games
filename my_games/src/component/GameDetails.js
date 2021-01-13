@@ -52,44 +52,47 @@ function GameDetails(props) {
                 <Drawer.Body>
                     {/* {1 === undefined?console.log('undefined'):console.log(props.game.short_screenshots[0].image)} */}
                     <Carousel autoplay className="custom-slider">
-                        <img
+                    {props.game.short_screenshots[0]===undefined? console.log('No img') : <img
                             src={props.game.short_screenshots[0].image}
                             height="250"
                             alt=""
-                        />
-                        <img
+                        />  }
+                        
+                        {props.game.short_screenshots[1]===undefined? console.log('No img') : <img
                             src={props.game.short_screenshots[1].image}
                             height="250"
                             alt=""
-                        />
-                        <img
+                        />  }
+                        {props.game.short_screenshots[2]===undefined? console.log('No img') : <img
                             src={props.game.short_screenshots[2].image}
                             height="250"
                             alt=""
-                        />
-                        <img
+                        />  }
+                        {props.game.short_screenshots[3]===undefined? console.log('No img') : <img
                             src={props.game.short_screenshots[3].image}
                             height="250"
                             alt=""
-                        />
-                        <img
+                        />  }
+                        {props.game.short_screenshots[4]===undefined? console.log('No img') : <img
                             src={props.game.short_screenshots[4].image}
                             height="250"
                             alt=""
-                        />
-                        <img
+                        />  }
+                        {props.game.short_screenshots[5]===undefined? console.log('No img') : <img
                             src={props.game.short_screenshots[5].image}
                             height="250"
                             alt=""
-                        />
-                        <img
+                        />  }
+                        {props.game.short_screenshots[6]===undefined? console.log('No img') : <img
                             src={props.game.short_screenshots[6].image}
                             height="250"
                             alt=""
-                        />
+                        />  }
                     </Carousel>
                     <div>
-                        <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} />
+                        {props.game.clip===null || props.game.clip=== undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} /> }
+                        {/* {props.game.clip.clips['full']===null || props.game.clip.clips['full']=== undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} /> } */}
+                        
                     </div>
                 </Drawer.Body>
                 <Drawer.Footer>

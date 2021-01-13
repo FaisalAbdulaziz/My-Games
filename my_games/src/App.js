@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Container } from 'react-bootstrap'
+import { Container,Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import CardList from './component/CardList';
 import axios from "axios"
@@ -13,12 +13,13 @@ function App() {
     const [gameData, setGameData] = useState(() => null)
     const [faves, setFaves] = useState(() => [])
     const [filter, setFilter] = useState(() => 'all')
+    const [page, setPage] = useState(() => 1)
 
     function handleFilterClick(filter) {
         setFilter(prevFilter => prevFilter = filter)
     }
 
-    function call() {
+    function call(num) {
         const url = `https://api.rawg.io/api/games?page=1`
 
         axios({
@@ -26,7 +27,22 @@ function App() {
             url: url
         }).then(response => {
             setGameData(prevGameData => prevGameData = response.data.results)
+            console.log(response.data.next)
+            for (let i = 1; i < num; i++) {
+                setGameData(prevGameData => [...new Set(prevGameData)])
+                    axios({
+                        method: 'GET',
+                        url: `https://api.rawg.io/api/games?page=${i+1}`
+                    }).then(response => {
+                        setGameData(prevGameData => prevGameData.concat(response.data.results))
+                        console.log(response.data.next,'llklklkl',gameData)
+                    })
+            }
+            
+            console.log('888888',gameData)
         })
+
+        
     }
 
     function handleFaveToggle(film) {
@@ -41,9 +57,17 @@ function App() {
     }
 
     useEffect(() => {
-        call()
+        call(page)
     }, [])
+    useEffect(() => {
+        call(page)
+    }, [page])
 
+    const test=()=>{
+        console.log(page)
+        setPage(prevPage => prevPage+1)
+        console.log(page)
+    }
     const cardlist = (gameData ? <div>
         <CardList className='card-container' setFave={() => setFave} filter={filter} games={gameData} faves={faves} onFaveToggle={handleFaveToggle}></CardList>
     </div> : null)
@@ -55,7 +79,10 @@ function App() {
                 <Container>
 
                     {cardlist}
+                    
                 </Container>
+                {/* <button  onClick={test}>More Games</button> */}
+                <Button className='moreBtn' variant="light" onClick={test}>More Games</Button>
             </header>
         </div>
     );
