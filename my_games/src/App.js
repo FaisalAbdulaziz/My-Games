@@ -19,7 +19,7 @@ function App() {
         setFilter(prevFilter => prevFilter = filter)
     }
 
-    function call(num) {
+    function call() {
         const url = `https://api.rawg.io/api/games?page=1`
 
         axios({
@@ -27,19 +27,19 @@ function App() {
             url: url
         }).then(response => {
             setGameData(prevGameData => prevGameData = response.data.results)
-            console.log(response.data.next)
-            for (let i = 1; i < num; i++) {
-                setGameData(prevGameData => [...new Set(prevGameData)])
-                    axios({
-                        method: 'GET',
-                        url: `https://api.rawg.io/api/games?page=${i+1}`
-                    }).then(response => {
-                        setGameData(prevGameData => prevGameData.concat(response.data.results))
-                        console.log(response.data.next,'llklklkl',gameData)
-                    })
-            }
-            
-            console.log('888888',gameData)
+        })
+
+        
+    }
+
+    function call2(num) {
+        const url = `https://api.rawg.io/api/games?page=${num}`
+
+        axios({
+            method: 'GET',
+            url: url
+        }).then(response => {
+            setGameData(prevGameData => prevGameData.concat(response.data.results))
         })
 
         
@@ -57,16 +57,15 @@ function App() {
     }
 
     useEffect(() => {
-        call(page)
+        call()
     }, [])
     useEffect(() => {
-        call(page)
+        page===1?console.log(''):
+        call2(page)
     }, [page])
 
     const test=()=>{
-        console.log(page)
         setPage(prevPage => prevPage+1)
-        console.log(page)
     }
     const cardlist = (gameData ? <div>
         <CardList className='card-container' setFave={() => setFave} filter={filter} games={gameData} faves={faves} onFaveToggle={handleFaveToggle}></CardList>
@@ -82,7 +81,8 @@ function App() {
                     
                 </Container>
                 {/* <button  onClick={test}>More Games</button> */}
-                <Button className='moreBtn' variant="light" onClick={test}>More Games</Button>
+                {filter==='all'?<Button className='moreBtn' variant="light" onClick={test}>More Games</Button>:null}
+                
             </header>
         </div>
     );
