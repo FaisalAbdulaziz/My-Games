@@ -4,13 +4,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 const Navbar = (props) => {
     return (
-        <Nav className='fixed-top' fill variant="tabs" /*defaultActiveKey="/home"*/>
-            <Nav.Item>
-                {/* <Nav.Link href="/home">All games</Nav.Link> */}
+        <Nav id='fixed-top' fill /*defaultActiveKey="/home"*/>
+            <Nav.Item id='navtabs'>
                 <Nav.Link onClick={() => props.handleFilterClick('all')} >All games</Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-                {/* <Nav.Link href="/home">All games</Nav.Link> */}
+            <Nav.Item id='navtabs'>
                 <Nav.Link onClick={() => props.handleFilterClick('fav')}>Fav games</Nav.Link>
             </Nav.Item>
         </Nav>

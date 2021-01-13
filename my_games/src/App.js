@@ -10,7 +10,7 @@ import Navbar from "./component/Navbar.js"
 
 const App = () => {
 
-    const [gameData, setGameData] = useState(() => null)
+    const [gameData, setGameData] = useState(() => [])
     const [faves, setFaves] = useState(() => [])
     const [filter, setFilter] = useState(() => 'all')
     const [page, setPage] = useState(() => 1)
@@ -83,7 +83,7 @@ const App = () => {
 
                 </Container>
                 {/* <button  onClick={test}>More Games</button> */}
-                {filter === 'all' ? <Button className='moreBtn' variant="light" onClick={test}>{load}</Button> : null}
+                {filter === 'all' ? <Button id='moreBtn' variant="light" onClick={test}>{load}</Button> : null}
 
             </header>
         </div>

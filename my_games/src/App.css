@@ -6,27 +6,18 @@
 
 .App-header {
   padding-top: 70px;
-  background-color: #282c34;
+  background-color: rgb(32, 35, 42);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(232, 230, 227);
 }
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .card-container{
@@ -34,16 +25,19 @@
     grid-template-columns: repeat(4,auto);
     grid-gap:10px;
     margin: 50px;
-    justify-content: center; 
+    justify-content: center;
 }
-.card{
+#card{
+    border-radius: 3%;
     float: left;
+    background-color: rgb(24, 26, 27);
     padding:0px;
     margin:0px;
     margin-right:-33px;
     margin-top: 5px;
     height: 100%;
     width:100%;
+    border-color:rgb(56, 61, 63);
 }
 
 .card-body{
@@ -60,6 +54,13 @@
   margin-right: 20px;
 }
 
+#drawer{
+  color: rgb(177, 170, 160);
+  background-color: rgb(26, 28, 34);
+  position: absolute;
+  height: 100%;
+}
+
 .btnCard{
   background-color:black;
   color: darkblue;
@@ -70,8 +71,12 @@
   margin-top: 20px
 }
 
-.fixed-top{
+#fixed-top{
+  border-bottom: 1px solid rgb(56, 61, 63);
   background-color:rgb(32, 35, 42);
+  position: fixed;
+  width:100%;
+  z-index: 1;
 }
 
 .imgAndName{
@@ -83,7 +88,6 @@
     font-size: 16px;
     line-height: 1.25;
     display: block;
-    color: #575757;
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -115,9 +119,25 @@
   margin-top: 5px;
   padding-bottom: 0px
 }
+#navtabs {
+  border-left: 1px solid;
+}
+#navtabs:hover {
+  border-color: rgb(56, 61, 63);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+#navtabs a{
+  color: rgb(74, 162, 237);
+  text-decoration-color: initial;
+}
 
-.moreBtn{
+#moreBtn{
   margin: 20px;
+  color: rgb(209, 205, 199);
+  background-color: rgb(27, 30, 31);
+  border-color: rgb(50, 54, 56);
+  border: 5px solid transparent;
 }
 
 /* .drawer{

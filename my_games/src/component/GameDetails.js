@@ -32,74 +32,78 @@ const GameDetails = (props) => {
                     isFave={props.games.includes(props.game)}
                 ></Cards>
             </ButtonToolbar>
+
             <Drawer
+                id='drawer'
                 show={show}
                 onHide={close}
             >
-                <Drawer.Header>
-                    <div className='imgAndName'>
-                        <img alt="" className='imgCardTop' src={props.game.background_image} />
-                    </div>
-                    <div className='detailsbtn'>
-                        <p>{props.game.name}</p>
-                        <div>
-                            <Rate defaultValue={props.game.rating} allowHalf readOnly size="md" />
-                            <span style={textStyle}>{props.game.rating} / 5 </span>
-                            <span className='ratings_count' style={textStyle}>({props.game.ratings_count})</span>
+                <div id='drawer'>
+                    <Drawer.Header >
+                        <div className='imgAndName'>
+                            <img alt="" className='imgCardTop' src={props.game.background_image} />
                         </div>
-                    </div>
-                </Drawer.Header>
-                <Drawer.Body>
-                    {/* {1 === undefined?console.log('undefined'):console.log(props.game.short_screenshots[0].image)} */}
-                    <Carousel autoplay className="custom-slider">
-                        {props.game.short_screenshots[0] === undefined ? console.log('No img') : <img
-                            src={props.game.short_screenshots[0].image}
-                            height="250"
-                            alt=""
-                        />}
+                        <div className='detailsbtn'>
+                            <p>{props.game.name}</p>
+                            <div>
+                                <Rate defaultValue={props.game.rating} allowHalf readOnly size="md" />
+                                <span style={textStyle}>{props.game.rating} / 5 </span>
+                                <span className='ratings_count' style={textStyle}>({props.game.ratings_count})</span>
+                            </div>
+                        </div>
+                    </Drawer.Header>
+                    <Drawer.Body id='drawerBody'>
+                        {/* {1 === undefined?console.log('undefined'):console.log(props.game.short_screenshots[0].image)} */}
+                        <Carousel autoplay className="custom-slider">
+                            {props.game.short_screenshots[0] === undefined ? console.log('No img') : <img
+                                src={props.game.short_screenshots[0].image}
+                                height="250"
+                                alt=""
+                            />}
 
-                        {props.game.short_screenshots[1] === undefined ? console.log('No img') : <img
-                            src={props.game.short_screenshots[1].image}
-                            height="250"
-                            alt=""
-                        />}
-                        {props.game.short_screenshots[2] === undefined ? console.log('No img') : <img
-                            src={props.game.short_screenshots[2].image}
-                            height="250"
-                            alt=""
-                        />}
-                        {props.game.short_screenshots[3] === undefined ? console.log('No img') : <img
-                            src={props.game.short_screenshots[3].image}
-                            height="250"
-                            alt=""
-                        />}
-                        {props.game.short_screenshots[4] === undefined ? console.log('No img') : <img
-                            src={props.game.short_screenshots[4].image}
-                            height="250"
-                            alt=""
-                        />}
-                        {props.game.short_screenshots[5] === undefined ? console.log('No img') : <img
-                            src={props.game.short_screenshots[5].image}
-                            height="250"
-                            alt=""
-                        />}
-                        {props.game.short_screenshots[6] === undefined ? console.log('No img') : <img
-                            src={props.game.short_screenshots[6].image}
-                            height="250"
-                            alt=""
-                        />}
-                    </Carousel>
-                    <div>
-                        {props.game.clip === null || props.game.clip === undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} />}
-                        {/* {props.game.clip.clips['full']===null || props.game.clip.clips['full']=== undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} /> } */}
+                            {props.game.short_screenshots[1] === undefined ? console.log('No img') : <img
+                                src={props.game.short_screenshots[1].image}
+                                height="250"
+                                alt=""
+                            />}
+                            {props.game.short_screenshots[2] === undefined ? console.log('No img') : <img
+                                src={props.game.short_screenshots[2].image}
+                                height="250"
+                                alt=""
+                            />}
+                            {props.game.short_screenshots[3] === undefined ? console.log('No img') : <img
+                                src={props.game.short_screenshots[3].image}
+                                height="250"
+                                alt=""
+                            />}
+                            {props.game.short_screenshots[4] === undefined ? console.log('No img') : <img
+                                src={props.game.short_screenshots[4].image}
+                                height="250"
+                                alt=""
+                            />}
+                            {props.game.short_screenshots[5] === undefined ? console.log('No img') : <img
+                                src={props.game.short_screenshots[5].image}
+                                height="250"
+                                alt=""
+                            />}
+                            {props.game.short_screenshots[6] === undefined ? console.log('No img') : <img
+                                src={props.game.short_screenshots[6].image}
+                                height="250"
+                                alt=""
+                            />}
+                        </Carousel>
+                        <div>
+                            {props.game.clip === null || props.game.clip === undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} />}
+                            {/* {props.game.clip.clips['full']===null || props.game.clip.clips['full']=== undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} /> } */}
 
-                    </div>
-                </Drawer.Body>
-                <Drawer.Footer>
-                    <Button onClick={close} appearance="primary">Confirm</Button>
-                    <Button onClick={close} appearance="subtle">Cancel</Button>
-                </Drawer.Footer>
+                        </div>
+                    </Drawer.Body></div>
+                {/* <Drawer.Footer> */}
+                {/* <Button onClick={close} appearance="primary">Confirm</Button>
+                    <Button onClick={close} appearance="subtle">Cancel</Button> */}
+                {/* </Drawer.Footer> */}
             </Drawer>
+
         </div>
     );
 }

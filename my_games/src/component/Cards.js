@@ -19,7 +19,7 @@ const Cards = (props) => {
     }
     return (
         <Col onClick={props.toggleDrawer()} lg={3}>
-            <Card className='card' style={{ width: '18rem' }}>
+            <Card id='card' style={{ width: '18rem' }}>
                 <Card.Body className='cardBody' onClick={handleActiveClick}>
                     <Card.Title>{props.game.name}</Card.Title>
                     <Card.Img className='imgCard' variant="top" src={props.game.background_image} />
