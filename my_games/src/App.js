@@ -15,11 +15,23 @@ const App = () => {
     const [filter, setFilter] = useState(() => 'all')
     const [page, setPage] = useState(() => 1)
     const [load, setLoad] = useState(() => 'More Games')
+    const [search, setSearch] = useState(() => [])
 
     const handleFilterClick = (filter) => {
         setFilter(prevFilter => prevFilter = filter)
     }
 
+    const handleSearchClick = (name) => {
+        // (search > 0 ? setSearch(prevSearch => prevSearch = []) : console.log('skip', search))
+        const url = `https://api.rawg.io/api/games?search=${name}`
+        axios({
+            method: 'GET',
+            url: url
+        }).then(response => {
+            setSearch(prevSearch => prevSearch = (response.data.results))
+        })
+        handleFilterClick('search')
+    }
     const call = () => {
         const url = `https://api.rawg.io/api/games?page=1`
 
@@ -58,32 +70,36 @@ const App = () => {
 
     useEffect(() => {
         call()
+        // call3()
     }, [])
     useEffect(() => {
         page === 1 ? console.log('') :
             call2(page)
     }, [page])
 
-    const test = (e) => {
+    const loading = (e) => {
         e.preventDefault();
         setLoad(prevLoad => prevLoad = 'Loading...')
         setPage(prevPage => prevPage + 1)
     }
+    const cardlist1 = ((filter === 'all'||filter === 'fav' )&& search.length>0 ? setSearch(prevSearch => prevSearch = []) : null)
     const cardlist = (gameData ? <div>
-        <CardList className='card-container' setFave={() => setFave} filter={filter} games={gameData} faves={faves} onFaveToggle={handleFaveToggle}></CardList>
+        <CardList className='card-container' setFave={() => setFave} filter={filter} search={search} games={gameData} faves={faves} onFaveToggle={handleFaveToggle}></CardList>
     </div> : null)
 
     return (
         <div className="App">
-            <Navbar handleFilterClick={handleFilterClick}></Navbar>
+            <Navbar search={search} handleSearchClick={handleSearchClick} handleFilterClick={handleFilterClick}></Navbar>
             <header className="App-header">
+                {filter === 'all' || filter === 'search' ? <h1 className='h1Header'>My Games</h1> : <h1 className='h1Header'>Favourite Games</h1>}
+                {/* <h1 className='h1Header'>{title}</h1> */}
                 <Container>
 
                     {cardlist}
 
                 </Container>
                 {/* <button  onClick={test}>More Games</button> */}
-                {filter === 'all' ? <Button id='moreBtn' variant="light" onClick={test}>{load}</Button> : null}
+                {filter === 'all' || filter === 'search'? <Button id='moreBtn' variant="light" onClick={loading}>{load}</Button> : null}
 
             </header>
         </div>

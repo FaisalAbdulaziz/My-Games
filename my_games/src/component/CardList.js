@@ -5,6 +5,7 @@ import GameDetails from './GameDetails'
 
 
 
+
 const CardList = (props) => {
 
     const allCards = props.games.map((game) => {
@@ -16,6 +17,20 @@ const CardList = (props) => {
                 games={props.games}
                 isFave={props.games.includes(game)}
             ></GameDetails>)
+    })
+
+
+
+    const search = props.search.map((game) => {
+        return (
+            <GameDetails
+                game={game}
+                key={game.id}
+                onFaveToggle={() => props.onFaveToggle(game)}
+                games={props.games}
+                isFave={props.games.includes(game)}
+            ></GameDetails>
+        )
     })
 
     const fav = props.faves.map((game) => {
@@ -32,7 +47,15 @@ const CardList = (props) => {
     return (
         <div>
             <Row>
-                {props.filter === 'all' ? allCards : fav}
+                {props.filter === 'all' && search.length === 0 ? allCards
+                    : search.length > 0 ? search
+                        : props.filter === 'fav' ? fav
+                            : null}
+                {/* {props.filter === 'all' ? allCards : fav} */}
+                {/* {props.filter === 'all' && search.length === 0 ? allCards : new Set(search)} */}
+                {/* {props.filter === 'hh'? allCards : search}
+                {props.filter !== 'all' ? fav : search} */}
+                {/*{props.filter === 'all' ? search.length === 0? allCards : props.filter === 'fav'? fav : search : null}*/}
             </Row>
             {props.filter === 'fav' && props.faves.length > 0 ? <Button onClick={props.setFave()} variant="outline-danger">Remove all</Button> : ""}
         </div>

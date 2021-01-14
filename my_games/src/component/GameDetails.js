@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Rate, ButtonToolbar, Drawer, Carousel } from 'rsuite';
+import { Button, Rate, ButtonToolbar, Drawer } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-default.css';
 import ReactPlayer from 'react-player'
 import Cards from './Cards.js'
+import { Carousel } from 'react-bootstrap'
 
 const GameDetails = (props) => {
     const [show, setShow] = useState(() => false)
@@ -53,8 +54,97 @@ const GameDetails = (props) => {
                         </div>
                     </Drawer.Header>
                     <Drawer.Body id='drawerBody'>
+
+
+
+
+
+
+
+
+                        <Carousel >
+                            <Carousel.Item id='slideImg' interval={1000}>
+                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                    <img id='slideImg'
+                                        src={props.game.short_screenshots[0].image}
+                                        height="250"
+                                        alt=""
+                                    />
+                                }
+                            </Carousel.Item>
+                            <Carousel.Item id='slideImg' interval={1000}>
+                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                    <img id='slideImg'
+                                        src={props.game.short_screenshots[1].image}
+                                        height="250"
+                                        alt=""
+                                    />
+                                }
+                            </Carousel.Item>
+                            <Carousel.Item id='slideImg' interval={1000}>
+                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                    <img id='slideImg'
+                                        src={props.game.short_screenshots[2].image}
+                                        height="250"
+                                        alt=""
+                                    />
+                                }
+                            </Carousel.Item>
+                            <Carousel.Item id='slideImg' interval={1000}>
+                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                    <img id='slideImg'
+                                        src={props.game.short_screenshots[3].image}
+                                        height="250"
+                                        alt=""
+                                    />
+                                }
+                            </Carousel.Item>
+                            <Carousel.Item id='slideImg' interval={1000}>
+                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                    <img id='slideImg'
+                                        src={props.game.short_screenshots[4].image}
+                                        height="250"
+                                        alt=""
+                                    />
+                                }
+                            </Carousel.Item>
+                            <Carousel.Item id='slideImg' interval={1000}>
+                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                    <img id='slideImg'
+                                        src={props.game.short_screenshots[5].image}
+                                        height="250"
+                                        alt=""
+                                    />
+                                }
+                            </Carousel.Item>
+                            <Carousel.Item id='slideImg' interval={1000}>
+                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                    <img id='slideImg'
+                                        src={props.game.short_screenshots[6].image}
+                                        height="250"
+                                        alt=""
+                                    />
+                                }
+                            </Carousel.Item>
+                        </Carousel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         {/* {1 === undefined?console.log('undefined'):console.log(props.game.short_screenshots[0].image)} */}
-                        <Carousel autoplay className="custom-slider">
+                        {/* <Carousel shape={'bar'} autoplay className="custom-slider">
                             {props.game.short_screenshots[0] === undefined ? console.log('No img') : <img
                                 src={props.game.short_screenshots[0].image}
                                 height="250"
@@ -91,9 +181,9 @@ const GameDetails = (props) => {
                                 height="250"
                                 alt=""
                             />}
-                        </Carousel>
+                        </Carousel> */}
                         <div>
-                            {props.game.clip === null || props.game.clip === undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} />}
+                            {props.game.clip === null || props.game.clip === undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={540} controls url={props.game.clip.clips['full']} />}
                             {/* {props.game.clip.clips['full']===null || props.game.clip.clips['full']=== undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} /> } */}
 
                         </div>
