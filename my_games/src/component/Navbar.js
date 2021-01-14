@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
-import { InputGroup, Input,Icon} from 'rsuite';
+import { InputGroup, Input, Icon } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-default.css';
 
 const Navbar = (props) => {
@@ -19,7 +19,7 @@ const Navbar = (props) => {
                 <Nav.Link onClick={() => props.handleFilterClick('search')} >Search for game</Nav.Link>
             </Nav.Item> */}
             <InputGroup inside style={styles}>
-                <Input placeholder="Game name" onChange={(event) => props.handleSearchClick(event)}/>
+                <Input placeholder="Game name" onChange={(event) => props.handleSearchClick(event)} />
                 <InputGroup.Button>
                     <Icon icon="search" />
                 </InputGroup.Button>

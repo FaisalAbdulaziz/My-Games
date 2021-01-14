@@ -82,7 +82,7 @@ const App = () => {
         setLoad(prevLoad => prevLoad = 'Loading...')
         setPage(prevPage => prevPage + 1)
     }
-    const cardlist1 = ((filter === 'all'||filter === 'fav' )&& search.length>0 ? setSearch(prevSearch => prevSearch = []) : null)
+    const cardlist1 = ((filter === 'all' || filter === 'fav') && search.length > 0 ? setSearch(prevSearch => prevSearch = []) : null)
     const cardlist = (gameData ? <div>
         <CardList className='card-container' setFave={() => setFave} filter={filter} search={search} games={gameData} faves={faves} onFaveToggle={handleFaveToggle}></CardList>
     </div> : null)
@@ -99,7 +99,7 @@ const App = () => {
 
                 </Container>
                 {/* <button  onClick={test}>More Games</button> */}
-                {filter === 'all' || filter === 'search'? <Button id='moreBtn' variant="light" onClick={loading}>{load}</Button> : null}
+                {filter === 'all' || filter === 'search' ? <Button id='moreBtn' variant="light" onClick={loading}>{load}</Button> : null}
 
             </header>
         </div>
