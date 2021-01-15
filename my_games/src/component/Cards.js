@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import { MdFavorite } from "react-icons/md";
+import { VscChromeClose } from "react-icons/vsc";
 
 const Cards = (props) => {
 
@@ -23,7 +24,16 @@ const Cards = (props) => {
                 <Card.Body className='cardBody' onClick={handleActiveClick}>
                     <Card.Title>{props.game.name}</Card.Title>
                     <Card.Img className='imgCard' variant="top" src={props.game.background_image} />
-                    <div className='pointer' onClick={handleClick}>{(isFave) ? <MdFavorite color='red' /> : <MdFavorite />}</div>
+                    <div className='pointer' onClick={handleClick}>
+                        {props.filter === 'fav'? <VscChromeClose/> : (isFave &&
+                            (props.filter === 'all' || props.filter === 'fav' || props.filter === 'search')) ?
+                            <MdFavorite color='red' />
+                            : <MdFavorite />}
+                        {/* {(isFave &&
+                            (props.filter === 'all' || props.filter === 'fav' || props.filter === 'search')) ?
+                            <MdFavorite color='red' />
+                            : <MdFavorite />} */}
+                    </div>
                 </Card.Body>
             </Card>
         </Col>

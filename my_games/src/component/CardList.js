@@ -11,11 +11,13 @@ const CardList = (props) => {
     const allCards = props.games.map((game) => {
         return (
             <GameDetails
+                filter={props.filter}
                 game={game}
                 key={game.id}
                 onFaveToggle={() => props.onFaveToggle(game)}
+                faves={props.faves}
                 games={props.games}
-                isFave={props.games.includes(game)}
+            // isFave={props.games.includes(game)}
             ></GameDetails>)
     })
 
@@ -24,11 +26,13 @@ const CardList = (props) => {
     const search = props.search.map((game) => {
         return (
             <GameDetails
+                filter={props.filter}
                 game={game}
                 key={game.id}
                 onFaveToggle={() => props.onFaveToggle(game)}
+                faves={props.faves}
                 games={props.games}
-                isFave={props.games.includes(game)}
+            // isFave={props.games.includes(game)}
             ></GameDetails>
         )
     })
@@ -36,11 +40,13 @@ const CardList = (props) => {
     const fav = props.faves.map((game) => {
         return (
             <GameDetails
+                filter={props.filter}
                 game={game}
                 key={game.id}
                 onFaveToggle={() => props.onFaveToggle(game)}
+                faves={props.faves}
                 games={props.games}
-                isFave={props.games.includes(game)}
+            // isFave={props.games.includes(game)}
             ></GameDetails>
         )
     })

@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import CardList from './component/CardList';
 import axios from "axios"
 import Navbar from "./component/Navbar.js"
+import { Icon } from 'rsuite';
+import 'rsuite/dist/styles/rsuite-default.css';
 
 
 
@@ -14,8 +16,10 @@ const App = () => {
     const [faves, setFaves] = useState(() => [])
     const [filter, setFilter] = useState(() => 'all')
     const [page, setPage] = useState(() => 1)
+    const [pageS, setPageS] = useState(() => 1)
     const [load, setLoad] = useState(() => 'More Games')
     const [search, setSearch] = useState(() => [])
+    const [name, setName] = useState(() => "")
 
     const handleFilterClick = (filter) => {
         setFilter(prevFilter => prevFilter = filter)
@@ -29,8 +33,22 @@ const App = () => {
             url: url
         }).then(response => {
             setSearch(prevSearch => prevSearch = (response.data.results))
+            setName(prevName => prevName = name)
         })
         handleFilterClick('search')
+    }
+    const handleSearchClickMore = () => {
+        // (search > 0 ? setSearch(prevSearch => prevSearch = []) : console.log('skip', search))
+        const url = `https://api.rawg.io/api/games?page=${pageS}&search=${name}`
+        axios({
+            method: 'GET',
+            url: url
+        }).then(response => {
+            setSearch(prevSearch => prevSearch.concat(response.data.results))
+            setLoad(prevLoad => prevLoad = 'More Games')
+        })
+        handleFilterClick('search')
+        
     }
     const call = () => {
         const url = `https://api.rawg.io/api/games?page=1`
@@ -73,14 +91,24 @@ const App = () => {
         // call3()
     }, [])
     useEffect(() => {
-        page === 1 ? console.log('') :
+        // (page < 2 && filter === 'search') ? console.log('') :
+        //     call2(page)
+        if(pageS > 1 && filter === 'search'){
+            handleSearchClickMore()
+        }else if(page > 1 && filter === 'all'){
             call2(page)
-    }, [page])
+        }
+    }, [page,pageS])
 
     const loading = (e) => {
         e.preventDefault();
-        setLoad(prevLoad => prevLoad = 'Loading...')
-        setPage(prevPage => prevPage + 1)
+        setLoad(prevLoad => prevLoad = 'Loading...' )
+        if(filter==='all'){
+            setPage(prevPage => prevPage + 1)
+        }else if(filter==='search'){
+            setPageS(prevPage => prevPage + 1)
+        }
+        
     }
     const cardlist1 = ((filter === 'all' || filter === 'fav') && search.length > 0 ? setSearch(prevSearch => prevSearch = []) : null)
     const cardlist = (gameData ? <div>

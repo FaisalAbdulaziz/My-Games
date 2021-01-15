@@ -25,12 +25,14 @@ const GameDetails = (props) => {
         <div>
             <ButtonToolbar>
                 <Cards
+                    filter={props.filter}
                     game={props.game}
                     key={props.game.id}
                     onFaveToggle={() => props.onFaveToggle(props.game)}
+                    faves={props.faves}
                     games={props.games}
                     toggleDrawer={() => toggleDrawer}
-                    isFave={props.games.includes(props.game)}
+                // isFave={props.games.includes(props.game)}
                 ></Cards>
             </ButtonToolbar>
 
@@ -63,69 +65,69 @@ const GameDetails = (props) => {
 
 
                         <Carousel >
+                            {props.game.short_screenshots[0] === undefined ? console.log('No img') :
                             <Carousel.Item id='slideImg' interval={1000}>
-                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
                                     <img id='slideImg'
                                         src={props.game.short_screenshots[0].image}
                                         height="250"
                                         alt=""
                                     />
-                                }
                             </Carousel.Item>
+                            }
+                            {props.game.short_screenshots[1] === undefined ? console.log('No img') :
                             <Carousel.Item id='slideImg' interval={1000}>
-                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
                                     <img id='slideImg'
                                         src={props.game.short_screenshots[1].image}
                                         height="250"
                                         alt=""
                                     />
-                                }
                             </Carousel.Item>
+                            }
+                            {props.game.short_screenshots[2] === undefined ? console.log('No img') :
                             <Carousel.Item id='slideImg' interval={1000}>
-                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
                                     <img id='slideImg'
                                         src={props.game.short_screenshots[2].image}
                                         height="250"
                                         alt=""
                                     />
-                                }
                             </Carousel.Item>
+                            }
+                            {props.game.short_screenshots[3] === undefined ? console.log('No img') :
                             <Carousel.Item id='slideImg' interval={1000}>
-                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
                                     <img id='slideImg'
                                         src={props.game.short_screenshots[3].image}
                                         height="250"
                                         alt=""
                                     />
-                                }
                             </Carousel.Item>
+                            }
+                            {props.game.short_screenshots[4] === undefined ? console.log('No img') :
                             <Carousel.Item id='slideImg' interval={1000}>
-                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
                                     <img id='slideImg'
                                         src={props.game.short_screenshots[4].image}
                                         height="250"
                                         alt=""
                                     />
-                                }
                             </Carousel.Item>
-                            <Carousel.Item id='slideImg' interval={1000}>
-                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                            }
+                            {props.game.short_screenshots[5] === undefined ? console.log('No img') :
+                                <Carousel.Item id='slideImg' interval={1000}>
                                     <img id='slideImg'
                                         src={props.game.short_screenshots[5].image}
                                         height="250"
                                         alt=""
                                     />
-                                }
-                            </Carousel.Item>
-                            <Carousel.Item id='slideImg' interval={1000}>
-                                {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                </Carousel.Item>
+                            }
+                            {props.game.short_screenshots[6] === undefined ? console.log('No img') :
+                                <Carousel.Item id='slideImg' interval={1000}>
                                     <img id='slideImg'
                                         src={props.game.short_screenshots[6].image}
                                         height="250"
                                         alt=""
                                     />
-                                }
-                            </Carousel.Item>
+                                </Carousel.Item>
+                            }
                         </Carousel>
 
 
