@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/faisalabdulaziz/My-Games/static/css/main.0c92fd83.chunk.css",
-    "main.js": "/faisalabdulaziz/My-Games/static/js/main.19d4fff6.chunk.js",
-    "main.js.map": "/faisalabdulaziz/My-Games/static/js/main.19d4fff6.chunk.js.map",
+    "main.css": "/faisalabdulaziz/My-Games/static/css/main.aa264f25.chunk.css",
+    "main.js": "/faisalabdulaziz/My-Games/static/js/main.397ca15b.chunk.js",
+    "main.js.map": "/faisalabdulaziz/My-Games/static/js/main.397ca15b.chunk.js.map",
     "runtime-main.js": "/faisalabdulaziz/My-Games/static/js/runtime-main.e01a416e.js",
     "runtime-main.js.map": "/faisalabdulaziz/My-Games/static/js/runtime-main.e01a416e.js.map",
     "static/css/2.b38e6244.chunk.css": "/faisalabdulaziz/My-Games/static/css/2.b38e6244.chunk.css",
-    "static/js/2.5e137c29.chunk.js": "/faisalabdulaziz/My-Games/static/js/2.5e137c29.chunk.js",
-    "static/js/2.5e137c29.chunk.js.map": "/faisalabdulaziz/My-Games/static/js/2.5e137c29.chunk.js.map",
+    "static/js/2.707248e0.chunk.js": "/faisalabdulaziz/My-Games/static/js/2.707248e0.chunk.js",
+    "static/js/2.707248e0.chunk.js.map": "/faisalabdulaziz/My-Games/static/js/2.707248e0.chunk.js.map",
     "static/js/3.5e5be8e1.chunk.js": "/faisalabdulaziz/My-Games/static/js/3.5e5be8e1.chunk.js",
     "static/js/3.5e5be8e1.chunk.js.map": "/faisalabdulaziz/My-Games/static/js/3.5e5be8e1.chunk.js.map",
     "index.html": "/faisalabdulaziz/My-Games/index.html",
     "static/css/2.b38e6244.chunk.css.map": "/faisalabdulaziz/My-Games/static/css/2.b38e6244.chunk.css.map",
-    "static/css/main.0c92fd83.chunk.css.map": "/faisalabdulaziz/My-Games/static/css/main.0c92fd83.chunk.css.map",
-    "static/js/2.5e137c29.chunk.js.LICENSE.txt": "/faisalabdulaziz/My-Games/static/js/2.5e137c29.chunk.js.LICENSE.txt"
+    "static/css/main.aa264f25.chunk.css.map": "/faisalabdulaziz/My-Games/static/css/main.aa264f25.chunk.css.map",
+    "static/js/2.707248e0.chunk.js.LICENSE.txt": "/faisalabdulaziz/My-Games/static/js/2.707248e0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e01a416e.js",
     "static/css/2.b38e6244.chunk.css",
-    "static/js/2.5e137c29.chunk.js",
-    "static/css/main.0c92fd83.chunk.css",
-    "static/js/main.19d4fff6.chunk.js"
+    "static/js/2.707248e0.chunk.js",
+    "static/css/main.aa264f25.chunk.css",
+    "static/js/main.397ca15b.chunk.js"
   ]
 }
