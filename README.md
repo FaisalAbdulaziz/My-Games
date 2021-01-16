@@ -1,6 +1,7 @@
 # My_Games
 ### A video games library
-***A simple web application for video games***
+A video game website that allow you to add, remove, edit
+and clear games and Mark it as complete/favorite and many more
 
 <br>
 
@@ -49,6 +50,8 @@ Click on the game to see more info
 
 - [x] tablet browsers support
 - [ ] phone browsers support
+- [ ] Adding already played tab
+- [ ] Adding the ability to add comments on games that already have been played
 - [ ] Adding the ability to Drag and Drop
 - [ ] Adding more animations
 - [ ] Adding more Styling
@@ -58,7 +61,11 @@ Click on the game to see more info
 
 - HTML
 - CSS
+- js
 - React
+- Axios
+- Node
+- npm
 - React-bootstrap
 - Rsuitejs
 - React-icons

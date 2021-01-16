@@ -149,3 +149,16 @@
   margin-top: -15px;
   margin-bottom: 20px;
 }
+
+.notYet:hover{
+  font-size: 0em;
+  cursor: not-allowed;
+}
+
+.notYet:hover::after{
+  cursor: not-allowed;
+  content: "Not supported yet";
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: bold;
+}

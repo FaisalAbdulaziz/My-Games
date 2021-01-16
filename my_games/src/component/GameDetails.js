@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Rate, ButtonToolbar, Drawer } from 'rsuite';
+import { Button, Rate, ButtonToolbar, Drawer } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-default.css';
 import ReactPlayer from 'react-player'
 import Cards from './Cards.js'
@@ -125,7 +125,12 @@ const GameDetails = (props) => {
                             {/* {props.game.clip.clips['full']===null || props.game.clip.clips['full']=== undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} /> } */}
 
                         </div>
-                    </Drawer.Body></div>
+                    </Drawer.Body>
+                    {props.filter === 'fav' || props.faves.includes(props.game) ?
+                        <Drawer.Footer>
+                            <Button className='notYet' appearance="primary">Add Comment</Button>
+                        </Drawer.Footer> : null}
+                </div>
             </Drawer>
         </div>
     );
