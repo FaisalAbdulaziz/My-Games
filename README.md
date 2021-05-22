@@ -80,13 +80,3 @@ All application components are usable across modern desktop, tablet only, phone 
  API | Method | Router | URL
 -----|--------|--------|-----
 rawg| GET    | /games  | https://api.rawg.io/api/games
-
-<br><br><br>
-
-# Special thanks:
-
-Many many thanks to: JRJS\
-[Mohammad Jouza](https://git.generalassemb.ly/MohammadJouza)\
-[Raymond](https://git.generalassemb.ly/raymond)\
-[Jaber alsalamah](https://git.generalassemb.ly/jaberalsalamah)\
-[Sameh kinawy](https://git.generalassemb.ly/samehkinawy)
