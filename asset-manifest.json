@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/faisalabdulaziz/My-Games/static/css/main.5754928f.chunk.css",
-    "main.js": "/faisalabdulaziz/My-Games/static/js/main.2c0568b7.chunk.js",
-    "main.js.map": "/faisalabdulaziz/My-Games/static/js/main.2c0568b7.chunk.js.map",
-    "runtime-main.js": "/faisalabdulaziz/My-Games/static/js/runtime-main.e477d92a.js",
-    "runtime-main.js.map": "/faisalabdulaziz/My-Games/static/js/runtime-main.e477d92a.js.map",
+    "main.css": "/faisalabdulaziz/My-Games/static/css/main.67a6d8f8.chunk.css",
+    "main.js": "/faisalabdulaziz/My-Games/static/js/main.c24c65cb.chunk.js",
+    "main.js.map": "/faisalabdulaziz/My-Games/static/js/main.c24c65cb.chunk.js.map",
+    "runtime-main.js": "/faisalabdulaziz/My-Games/static/js/runtime-main.7b5fa45b.js",
+    "runtime-main.js.map": "/faisalabdulaziz/My-Games/static/js/runtime-main.7b5fa45b.js.map",
     "static/css/2.b38e6244.chunk.css": "/faisalabdulaziz/My-Games/static/css/2.b38e6244.chunk.css",
-    "static/js/2.90c0f6be.chunk.js": "/faisalabdulaziz/My-Games/static/js/2.90c0f6be.chunk.js",
-    "static/js/2.90c0f6be.chunk.js.map": "/faisalabdulaziz/My-Games/static/js/2.90c0f6be.chunk.js.map",
-    "static/js/3.cefbe787.chunk.js": "/faisalabdulaziz/My-Games/static/js/3.cefbe787.chunk.js",
-    "static/js/3.cefbe787.chunk.js.map": "/faisalabdulaziz/My-Games/static/js/3.cefbe787.chunk.js.map",
+    "static/js/2.da51f63f.chunk.js": "/faisalabdulaziz/My-Games/static/js/2.da51f63f.chunk.js",
+    "static/js/2.da51f63f.chunk.js.map": "/faisalabdulaziz/My-Games/static/js/2.da51f63f.chunk.js.map",
+    "static/js/3.cb9c272c.chunk.js": "/faisalabdulaziz/My-Games/static/js/3.cb9c272c.chunk.js",
+    "static/js/3.cb9c272c.chunk.js.map": "/faisalabdulaziz/My-Games/static/js/3.cb9c272c.chunk.js.map",
     "index.html": "/faisalabdulaziz/My-Games/index.html",
     "static/css/2.b38e6244.chunk.css.map": "/faisalabdulaziz/My-Games/static/css/2.b38e6244.chunk.css.map",
-    "static/css/main.5754928f.chunk.css.map": "/faisalabdulaziz/My-Games/static/css/main.5754928f.chunk.css.map",
-    "static/js/2.90c0f6be.chunk.js.LICENSE.txt": "/faisalabdulaziz/My-Games/static/js/2.90c0f6be.chunk.js.LICENSE.txt"
+    "static/css/main.67a6d8f8.chunk.css.map": "/faisalabdulaziz/My-Games/static/css/main.67a6d8f8.chunk.css.map",
+    "static/js/2.da51f63f.chunk.js.LICENSE.txt": "/faisalabdulaziz/My-Games/static/js/2.da51f63f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e477d92a.js",
+    "static/js/runtime-main.7b5fa45b.js",
     "static/css/2.b38e6244.chunk.css",
-    "static/js/2.90c0f6be.chunk.js",
-    "static/css/main.5754928f.chunk.css",
-    "static/js/main.2c0568b7.chunk.js"
+    "static/js/2.da51f63f.chunk.js",
+    "static/css/main.67a6d8f8.chunk.css",
+    "static/js/main.c24c65cb.chunk.js"
   ]
 }
