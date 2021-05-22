@@ -20,7 +20,7 @@ Run `npm start` to start your frontend.<br>
 <br><br><br>
 # Use
 
-Either download the project or [Use it online](https://pages.git.generalassemb.ly/faisalabdulaziz/My-Games/)
+Either download the project or [Use it online](https://faisalabdulaziz.github.io/My-Games/)
 <br><br><br>
 
 # Features
