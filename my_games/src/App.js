@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import CardList from './component/CardList';
 import axios from "axios"
 import Navbar from "./component/Navbar.js"
-
+require('dotenv').config()
 
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
     }
 
     const handleSearchClick = (name) => {
-        const url = `https://api.rawg.io/api/games?search=${name}`
+        const url = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&search=${name}`
         axios({
             method: 'GET',
             url: url
@@ -35,7 +35,7 @@ const App = () => {
         handleFilterClick('search')
     }
     const handleSearchClickMore = () => {
-        const url = `https://api.rawg.io/api/games?page=${pageS}&search=${name}`
+        const url = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page=${pageS}&search=${name}`
         axios({
             method: 'GET',
             url: url
@@ -47,7 +47,8 @@ const App = () => {
 
     }
     const call = () => {
-        const url = `https://api.rawg.io/api/games?page=1`
+        // const url = `https://api.rawg.io/api/games?page=1`
+        const url = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page=1`
 
         axios({
             method: 'GET',
@@ -58,7 +59,7 @@ const App = () => {
     }
 
     const call2 = (num) => {
-        const url = `https://api.rawg.io/api/games?page=${num}`
+        const url = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page=${num}`
 
         axios({
             method: 'GET',
