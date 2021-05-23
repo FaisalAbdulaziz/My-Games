@@ -31,6 +31,14 @@ const App = () => {
         }).then(response => {
             setSearch(prevSearch => prevSearch = (response.data.results))
             setName(prevName => prevName = name)
+            response.data.results.forEach(element => {
+                axios({
+                    method: 'GET',
+                    url: `https://api.rawg.io/api/games/${element.id}/movies?key=${process.env.REACT_APP_API_KEY}`
+                }).then(response => {
+                    response.data.results[0] == undefined? console.log("no clip") : element.trailer = response.data.results[0].data.max
+                })
+            });
         })
         handleFilterClick('search')
     }
@@ -42,6 +50,14 @@ const App = () => {
         }).then(response => {
             setSearch(prevSearch => prevSearch.concat(response.data.results))
             setLoad(prevLoad => prevLoad = 'More Games')
+            response.data.results.forEach(element => {
+                axios({
+                    method: 'GET',
+                    url: `https://api.rawg.io/api/games/${element.id}/movies?key=${process.env.REACT_APP_API_KEY}`
+                }).then(response => {
+                    response.data.results[0] == undefined? console.log("no clip") : element.trailer = response.data.results[0].data.max
+                })
+            });
         })
         handleFilterClick('search')
 
@@ -55,30 +71,46 @@ const App = () => {
             url: url
         }).then(response => {
             setGameData(prevGameData => prevGameData = response.data.results)
+            response.data.results.forEach(element => {
+                axios({
+                    method: 'GET',
+                    url: `https://api.rawg.io/api/games/${element.id}/movies?key=${process.env.REACT_APP_API_KEY}`
+                }).then(response => {
+                    response.data.results[0] == undefined? console.log("no clip") : element.trailer = response.data.results[0].data.max
+                })
+            });
         })
     }
-
+    
     const call2 = (num) => {
         const url = `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page=${num}`
-
+        
         axios({
             method: 'GET',
             url: url
         }).then(response => {
             setGameData(prevGameData => prevGameData.concat(response.data.results))
             setLoad(prevLoad => prevLoad = 'More Games')
+            response.data.results.forEach(element => {
+                axios({
+                    method: 'GET',
+                    url: `https://api.rawg.io/api/games/${element.id}/movies?key=${process.env.REACT_APP_API_KEY}`
+                }).then(response => {
+                    response.data.results[0] == undefined? console.log("no clip") : element.trailer = response.data.results[0].data.max
+                })
+            });
         })
-
-
+        
+        
     }
-
+    
     const handleFaveToggle = (film) => {
         const fave = faves.slice(0)
         const filmIndex = fave.indexOf(film)
         filmIndex === -1 ? fave.push(film) : fave.splice(filmIndex, 1)
         setFaves(prevFave => prevFave = fave)
     }
-
+    
     const setFave = () => {
         setFaves(prevFave => prevFave = [])
     }
@@ -102,7 +134,7 @@ const App = () => {
         } else if (filter === 'search') {
             setPageS(prevPage => prevPage + 1)
         }
-
+        
     }
     const cardlist1 = ((filter === 'all' || filter === 'fav') && search.length > 0 ? setSearch(prevSearch => prevSearch = []) : null)
     const cardlist = (gameData ? <div>

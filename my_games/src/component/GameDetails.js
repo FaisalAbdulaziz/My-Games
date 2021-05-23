@@ -121,7 +121,7 @@ const GameDetails = (props) => {
                             }
                         </Carousel>
                         <div>
-                            {props.game.clip === null || props.game.clip === undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={540} controls url={props.game.clip.clips['full']} />}
+                            {props.game.trailer === null || props.game.trailer === undefined ? <h1>No video (╯‵□′)╯︵┻━┻</h1> : <ReactPlayer volume={0.1} width={540} controls url={props.game.trailer} />}
                             {/* {props.game.clip.clips['full']===null || props.game.clip.clips['full']=== undefined ? console.log('No Video') : <ReactPlayer volume={0.1} width={535} controls url={props.game.clip.clips['full']} /> } */}
 
                         </div>
